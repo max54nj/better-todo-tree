@@ -4,6 +4,9 @@
   "description": "A simple tree of all your ToDos",
   "publisher": "max54nj",
   "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/max54nj/better-todo-tree.git"
+  },
   "engines": {
     "vscode": "^1.101.0"
   },
