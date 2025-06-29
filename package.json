@@ -1,0 +1,108 @@
+{
+  "name": "simple-todo-tree",
+  "displayName": "Simple ToDo Tree",
+  "description": "A simple tree of all your ToDos",
+  "publisher": "max54nj",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "title": "Refresh",
+        "command": "simple-todo-tree.refresh",
+        "category": "Simple ToDo Tree"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "simple-todo-tree-container",
+          "title": "ToDo Tree",
+          "icon": "resources/icons/list-check.svg"
+        }
+      ]
+    },
+    "views": {
+      "simple-todo-tree-container": [
+        {
+          "id": "simple-todo-tree-view",
+          "name": "ToDo Tree",
+          "icon": "resources/icons/list-check.svg"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Simple Todo Tree",
+      "properties": {
+        "simpleTodoTree.includePatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/*.{ts,js,tsx,jsx,py,java,cpp,c,cs,php,rb,go,rs,vue,svelte}"
+          ],
+          "description": "Glob patterns for files to include when scanning for TODOs",
+          "scope": "resource"
+        },
+        "simpleTodoTree.todoPatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "TODO",
+            "FIXME",
+            "BUG"
+          ],
+          "description": "Patterns to search for in comments",
+          "scope": "resource"
+        },
+        "simpleTodoTree.excludePatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/{node_modules,dist,.next,out,build,.git,coverage,.vscode,.idea,target,bin,obj,vendor}/**"
+          ],
+          "description": "Glob patterns for files and directories to exclude when scanning for TODOs",
+          "scope": "resource"
+        },
+        "simpleTodoTree.debounceDelay": {
+          "type": "number",
+          "default": 500,
+          "minimum": 100,
+          "maximum": 5000,
+          "description": "Delay in milliseconds after typing stops before updating the TODO tree (100-5000ms)",
+          "scope": "resource"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/vscode": "^1.101.0"
+  }
+}
