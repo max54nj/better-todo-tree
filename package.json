@@ -4,15 +4,28 @@
   "description": "A simple tree of all your ToDos",
   "publisher": "max54nj",
   "version": "1.0.0",
+  "icon": "resources/todo-tree.png",
   "repository": {
-    "url": "https://github.com/max54nj/better-todo-tree.git"
+    "url": "https://github.com/max54nj/better-todo-tree.git",
+    "type": "git"
   },
+  "bugs": {
+    "url": "https://github.com/max54nj/better-todo-tree/issues"
+  },
+  "homepage": "https://github.com/max54nj/better-todo-tree#readme",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.101.0"
   },
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "todo",
+    "tree",
+    "simple"
+  ],
+  "pricing": "Free",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
@@ -28,7 +41,7 @@
         {
           "id": "simple-todo-tree-container",
           "title": "ToDo Tree",
-          "icon": "resources/icons/list-check.svg"
+          "icon": "resources/list-check.svg"
         }
       ]
     },
@@ -100,12 +113,10 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.101.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
     "eslint": "^9.25.1",
     "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "@types/vscode": "^1.101.0"
   }
 }

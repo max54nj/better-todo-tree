@@ -2,7 +2,7 @@
 
 **Supports multi project workspaces**
 
-![todo tree](images/todo-tree.png)
+![todo tree](https://raw.githubusercontent.com/max54nj/better-todo-tree/refs/heads/main/resources/readme/todo-tree.png)
 
 ## Extension Settings
 
